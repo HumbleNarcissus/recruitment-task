@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        header {
+            background-color: #1A1C22;
+            width: 100%;
+            height: 100px;
+        }
+
+        footer {
+            background-color: #1A1C22;
+            width: 100%;
+            height: 100px;
+        }
+
+        aside {
+            background-color: #6C757D;
+            margin: 15px 0;
+        }
+
+        main {
+            display: grid;
+        }
+
+        .main__content {
+            background-color: #343A40;
+            height: calc(100% - 15px);
+        }
+
+        .wrapper {
+            min-height: 100%;
+            display: grid;
+        }
+
+        @media all and (min-width: 599px) {
+            main {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-column-gap: 15px;
+                overflow: hidden;
+            }
+        }
+
+        @media all and (min-width: 899px)  {
+            .wrapper {
+                grid-template-columns: 400px 1fr;
+                grid-column-gap: 15px;
+            }
+
+            main {
+                margin-top: 15px;
+            }
+        }
+
+        @media all and (min-width: 1199px) {
+            main {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header></header>
+    <div class="wrapper">
+        <aside></aside>
+        <main>
+            <div class="main__content"></div>
+            <div class="main__content"></div>
+            <div class="main__content"></div>
+            <div class="main__content"></div>
+            <div class="main__content"></div>
+            <div class="main__content"></div>
+        </main>
+    </div>
+    <footer></footer>
+</body>
+
+</html>

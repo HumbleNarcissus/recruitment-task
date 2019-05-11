@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+        }
+
+        td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <main>
+        <table>
+            <tr><td>Walmart</td><tr>
+            <tr><td>State Grid</td><tr>
+            <tr><td>Sinopec Group</td><tr>
+            <tr><td>China National Petroleum</td><tr>
+            <tr><td>Royal Dutch Shell</td><tr>
+            <tr><td>Toyota Motor</td><tr>
+            <tr><td>Volkswagen</td><tr>
+            <tr><td>BP</td><tr>
+            <tr><td>Exxon Mobile</td><tr>
+            <tr><td>Berkshire Hathaway</td><tr>
+        </table>
+
+        <form onsubmit="sortTable(event)">
+            <input class="filter" type="text">
+            <button type="submit" value="Submit">Filter</button>
+        </form>
+    </main>
+
+    <script>
+        const sortTable = (event) => {
+            event.preventDefault();
+            const getTableData = Array.from(document.getElementsByTagName('td'));
+            const userInput = document.getElementsByClassName('filter')[0].value;
+
+            filterArray(getTableData, userInput);
+        }
+
+        // filter array with matching user input
+        const filterArray = (array, userInput) => {
+            userInput = userInput.toLowerCase();
+            return array.filter(item => {
+
+                if (!item.innerHTML.toLowerCase().includes(userInput)) {
+                    return item.style.display = 'none';
+                }
+
+                return item.style.display = 'block';
+            })
+        }
+
+        document.getElementsByTagName('button').onclick = (event) => {
+            sortTable(event);
+        }
+
+    </script>
+
+</body>
+
+</html>
