@@ -39,14 +39,14 @@
             <tr><td>Berkshire Hathaway</td><tr>
         </table>
 
-        <form onsubmit="sortTable(event)">
+        <form onsubmit="formEvent(event)">
             <input class="filter" type="text">
             <button type="submit" value="Submit">Filter</button>
         </form>
     </main>
 
     <script>
-        const sortTable = (event) => {
+        const formEvent = (event) => {
             event.preventDefault();
             const getTableData = Array.from(document.getElementsByTagName('td'));
             const userInput = document.getElementsByClassName('filter')[0].value;
@@ -66,11 +66,6 @@
                 return item.style.display = 'block';
             })
         }
-
-        document.getElementsByTagName('button').onclick = (event) => {
-            sortTable(event);
-        }
-
     </script>
 
 </body>
